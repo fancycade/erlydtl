@@ -52,7 +52,7 @@
 
 -import(erlydtl_compiler_utils,
          [add_filters/2, add_tags/2, call_extension/3,
-         load_library/2, shorten_filename/1, get_current_file/1]).
+         load_library/2, get_current_file/1]).
 
 -include("erlydtl_ext.hrl").
 
@@ -123,7 +123,7 @@ process_opts(File, Module, Options0) ->
                     _ ->
                         File
                 end),
-    Source = shorten_filename(Source0),
+    Source = Source0,
     Options = [{compiler_options, [{source, Source}]}
                |compiler_opts(Options1, [])],
     Context =
